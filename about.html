@@ -1,0 +1,67 @@
+<html>
+<head>
+<title>177053 - Rana Najdawi</title>
+<style>
+.photo-container {
+    text-align: center;
+    margin: 20px 0; 
+}
+a {
+    color: green;
+}
+</style>
+<script type="text/javascript">
+    function validateForm(event) {
+        event.preventDefault(); 
+
+        const fullName = document.getElementById('fullName').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const country = document.getElementById('country').value.trim();
+        const comments = document.getElementById('comments').value.trim();
+        
+        if (fullName === "" || email === "" || country === "" || comments === "") {
+            alert("Please fill in all fields before submission.");
+            return false;
+        } else {
+            alert("Form was submitted successfully!");
+            document.getElementById('contactForm').reset();
+        }
+    }
+</script>
+</head>
+<body style='background-color:Silver'>
+
+<div class="photo-container">
+    <div style='color:black'>
+       <a href="index.html">Home</a> | 
+       <a href="contectindex.html">Contact Me</a>
+    </div>
+    
+    <h2 style="color:green">Contact Me</h2>
+    <p>If you have any questions or comments, please fill out the form below:</p>
+      
+    <form id="contactForm" onsubmit="validateForm(event)" style="display: inline-block; text-align: left;">
+        <label for="fullName">Full Name:</label><br>
+        <input type="text" id="fullName" name="fullName"><br><br>
+        
+        <label for="email">Email Address:</label><br>
+        <input type="email" id="email" name="email"><br><br>
+        
+        <label for="country">Country:</label><br>
+        <select id="country" name="country">
+             <option value="Jordan">Jordan</option>
+             <option value="Palestine">Palestine</option>
+             <option value="USA">USA</option>
+             <option value="Qatar">Qatar</option>
+             <option value="Other">Other</option>
+        </select><br><br>
+        
+        <label for="comments">Comments:</label><br>
+        <textarea id="comments" name="comments" rows="4"></textarea><br><br>
+
+        <button type="submit">Submit</button>
+    </form>                
+</div>
+
+</body>
+</html>
